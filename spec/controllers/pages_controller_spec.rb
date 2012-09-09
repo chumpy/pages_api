@@ -132,4 +132,20 @@ describe PagesController do
       end
     end
   end
+
+  describe "POST 'publish'" do
+    it "should publish the page" do
+      page = FactoryGirl.create :page, published_on: nil, title: "foo bar", content: "foo bar"
+      post :publish, id: page.id, format: :json
+      assigns(:page).published_on.should be
+    end
+  end
+
+  describe "GET 'total_words'" do
+    it "should return the total for the page" do
+      page = FactoryGirl.create :page, published_on: nil, title: "foo bar", content: "foo bar"
+      get :total_words, format: :json, id: page.id
+      expect(assigns(:total_words)).to eq({"total_words" => 4})
+    end  
+  end
 end
