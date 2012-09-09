@@ -47,6 +47,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    crudspec (0.2.0)
+      rails
+      rspec
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -154,6 +157,7 @@ PLATFORMS
 DEPENDENCIES
   capybara (>= 1.1.2)
   coffee-rails (~> 3.2.1)
+  crudspec
   factory_girl_rails (>= 4.0.0)
   hpricot (>= 0.8.6)
   inherited_resources
