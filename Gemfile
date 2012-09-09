@@ -5,6 +5,7 @@ group :development, :test do
   gem 'crudspec'
 end
 gem 'inherited_resources'
+gem 'heroku'
 gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
