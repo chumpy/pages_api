@@ -82,7 +82,7 @@ describe PagesController do
   end  
   describe "PUT 'update'" do
     before(:each) do
-      @page = FactoryGirl.create :page
+      @page = FactoryGirl.build :page
     end
 
     context "the update is successful" do
@@ -111,7 +111,25 @@ describe PagesController do
       @page.should_receive(:destroy).and_return(true)
       delete :destroy, :id => @page.id, format: :xml
     end
+  end
+  describe "published queries" do
+    before(:each) do
+      @published_page = FactoryGirl.create(:page, published_on: Date.today - 1.day)
+      @unpublished_page = FactoryGirl.create(:page, published_on: nil)
+    end
 
+    describe "GET 'published'" do
+      it "should only return the published page" do
+        get :published, format: :xml
+        expect(assigns(:pages)).to eq(Array(@published_page))
+      end
+    end
 
+    describe "GET 'unpublished'" do
+      it "should only return the unpublished page" do
+        get :unpublished, format: :xml
+        expect(assigns(:pages)).to eq(Array(@unpublished_page))
+      end
+    end
   end
 end
