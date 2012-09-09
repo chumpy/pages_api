@@ -1,4 +1,19 @@
-RECIPES
+Pages
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.com/
+
+________________________
+
+Recipes:
 ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "setup", "testing", "views"]
-PREFERENCES
+
+Preferences:
 {:git=>true, :railsapps=>"none", :dev_webserver=>"webrick", :database=>"sqlite", :templates=>"haml", :unit_test=>"rspec", :integration=>"capybara", :fixtures=>"factory_girl", :frontend=>"none", :email=>"none", :authentication=>"none", :authorization=>"none", :form_builder=>"none", :starter_app=>"none"}
+
+________________________
+
+License
